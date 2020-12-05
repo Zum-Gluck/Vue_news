@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from 'views/Home.vue'
+import Info from 'views/Info.vue'
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', redirect: '/home' },
-  { path: '/home', component: Home }
+  { path: '/home', component: Home },
+  { path: '/info',name:'info', component: Info }
 ]
 
 const router = new VueRouter({

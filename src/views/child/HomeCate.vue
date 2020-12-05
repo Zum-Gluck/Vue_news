@@ -38,6 +38,7 @@ export default {
 .box {
   position: sticky;
   top: 44px;
+  z-index: 9;
 }
 ul {
   display: flex;

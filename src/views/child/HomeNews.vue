@@ -1,12 +1,15 @@
 <template>
-  <div class="News">
-    <slot></slot>
+  <div>
+    <div class="News">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "HomeNews",
+
 };
 </script>
 

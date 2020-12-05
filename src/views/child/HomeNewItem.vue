@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div class="NewItem" v-for="item in newsList" :key="item.id">
+    <div
+      class="NewItem"
+      v-for="(item, index) in newsList"
+      :key="item.id"
+      v-on:click="newclick(index)"
+    >
       <div class="pic">
         <img :src="item.pic" />
       </div>
@@ -25,8 +30,12 @@ export default {
   },
   methods: {
     async getNewsList() {
-      let { data: res } = await this.$http.get("/info");
-      this.newsList = res.list;
+      let { data: res } = await this.$http.get("/list");
+      this.newsList = res.result[0].list;
+      this.$Bus.$emit("over");
+    },
+    newclick(index) {
+      this.$router.replace({ name: "info", query: { id: index, cid: 1 } });
     },
   },
 };

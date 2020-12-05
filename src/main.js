@@ -6,6 +6,8 @@ import './plugins/vant.js'
 import './assets/css/base.css'
 import './assets/font/iconfont.css'
 
+Vue.prototype.$Bus = new Vue()
+
 Vue.config.productionTip = false
 axios.defaults.baseURL = "http://localhost:3000/api"
 Vue.prototype.$http = axios;

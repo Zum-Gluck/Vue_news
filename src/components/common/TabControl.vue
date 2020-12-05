@@ -28,6 +28,7 @@ export default {
   height: 44px;
   background-color: @bgc;
   color: #fff;
+  z-index: 9;
   .left {
     display: flex;
     justify-content: flex-end;
