@@ -2,11 +2,13 @@
   <div>
     <HomeTabControl></HomeTabControl>
     <HomeCate></HomeCate>
-    <Scroll>
-      <HomeNews>
-        <HomeNewItem></HomeNewItem>
-      </HomeNews>
-    </Scroll>
+    <div class="boxa">
+      <Scroll>
+        <HomeNews>
+          <HomeNewItem></HomeNewItem>
+        </HomeNews>
+      </Scroll>
+    </div>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ import HomeTabControl from "./child/HomeTabControl";
 import HomeCate from "./child/HomeCate";
 import HomeNews from "./child/HomeNews";
 import HomeNewItem from "./child/HomeNewItem";
-import Scroll from "../components/content/Scroll";
+import Scroll from "components/content/Scroll";
 
 export default {
   name: "home",
@@ -39,5 +41,8 @@ export default {
 <style>
 .van-popup--top {
   top: calc(44px + 37px) !important;
+}
+.boxa {
+  height: calc(100vh - 44px - 37px);
 }
 </style>

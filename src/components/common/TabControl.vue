@@ -22,6 +22,7 @@ export default {
 @bgc: #d43d3d;
 .TabControl {
   position: fixed;
+  top: 0;
   display: flex;
   text-align: center;
   width: 100%;

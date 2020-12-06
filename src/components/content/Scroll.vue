@@ -1,5 +1,5 @@
 <template>
-  <div class="wappers" ref="wapper">
+  <div class="wappers" ref="wapper" >
     <div class="content">
       <slot></slot>
     </div>
@@ -24,6 +24,6 @@ export default {
 
 <style lang="less" scoped>
 .wappers {
-  height: calc(100vh - 44px - 37px);
+  height: 100%;
 }
 </style>

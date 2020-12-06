@@ -35,7 +35,7 @@ export default {
       this.$Bus.$emit("over");
     },
     newclick(index) {
-      this.$router.replace({ name: "info", query: { id: index, cid: 1 } });
+      this.$router.push({ name: "info", query: { id: index, cid: 1 } });
     },
   },
 };
