@@ -9,6 +9,9 @@
       >
         <div>{{ item.cateName }}</div>
       </li>
+      <div class="changeCate" @click="ChangeCateClick">
+        <div class="iconfont icon-jiahao"></div>
+      </div>
     </ul>
   </div>
 </template>
@@ -29,6 +32,9 @@ export default {
   methods: {
     navClick(index) {
       this.currentIndex = index;
+    },
+    ChangeCateClick() {
+      this.$router.push("/channel");
     },
   },
 };
@@ -61,5 +67,16 @@ ul {
 }
 .currentcolor {
   color: #f85959;
+}
+.changeCate {
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 41px;
+  height: 100%;
+  color: #f86969;
+  background-color: #f4f5f6;
 }
 </style>

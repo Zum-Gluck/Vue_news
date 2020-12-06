@@ -7,7 +7,7 @@
       <slot name="center">标题</slot>
     </div>
     <div class="right">
-      <slot name="right">3</slot>
+      <slot name="right"></slot>
     </div>
   </main>
 </template>

@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1667263",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
       "icon_id": "7141595",
       "name": "search",
       "font_class": "search",
@@ -20,11 +27,11 @@
       "unicode_decimal": 59249
     },
     {
-      "icon_id": "14342041",
-      "name": "user",
-      "font_class": "user",
-      "unicode": "e7c8",
-      "unicode_decimal": 59336
+      "icon_id": "9626918",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e879",
+      "unicode_decimal": 59513
     }
   ]
 }

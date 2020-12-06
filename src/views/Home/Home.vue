@@ -2,7 +2,7 @@
   <div>
     <HomeTabControl></HomeTabControl>
     <HomeCate></HomeCate>
-    <div class="boxa">
+    <div class="container">
       <Scroll>
         <HomeNews>
           <HomeNewItem></HomeNewItem>
@@ -42,7 +42,7 @@ export default {
 .van-popup--top {
   top: calc(44px + 37px) !important;
 }
-.boxa {
+.container {
   height: calc(100vh - 44px - 37px);
 }
 </style>
