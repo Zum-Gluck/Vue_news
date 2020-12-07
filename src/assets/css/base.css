@@ -6,6 +6,8 @@ body {
   font:12px/1.5 "MicrosoftYaHei";
   min-width: 320px;
   max-width: 540px;
+  overflow: scroll;
+  overflow-y:hidden
 } 
 
-@import "./normalize.css"
+@import "./normalize.css"z

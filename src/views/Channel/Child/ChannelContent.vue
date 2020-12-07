@@ -1,21 +1,21 @@
 <template>
   <div class="Content">
     <div class="delete">点击删除以下频道</div>
-    <ul class="Content_main">
+    <ul class="Content_main" ref="ul">
       <li
         v-for="(item, index) in cateList"
         :key="item.id"
         :class="index == GetCid ? 'currentColor' : ''"
+        @click="chanelItemClick"
       >
         {{ item.cateName }}
       </li>
     </ul>
     <div class="delete">点击添加以下频道</div>
     <ul class="Content_main">
-      <li>旅游</li>
-      <li>历史</li>
-      <li>探索</li>
-      <li>美食</li>
+      <li v-for="item in myList" :key="item" @click="deleteClick(item, $event)">
+        {{ item }}
+      </li>
     </ul>
   </div>
 </template>
@@ -26,6 +26,8 @@ export default {
   data() {
     return {
       cateList: [],
+      myList: ["旅游", "历史", "探索", "美食"],
+      item: "",
     };
   },
   computed: {
@@ -40,6 +42,20 @@ export default {
     async getCateList() {
       let { data: res } = await this.$http.get("/cate");
       this.cateList = res.result;
+    },
+    chanelItemClick($event) {
+      let El = $event.target;
+      let content = El.innerHTML;
+      this.myList.push(content);
+      El.style.transform = "scale(0)";
+      El.style.display = "none";
+    },
+    deleteClick(item, $event) {
+      $event.target.style.transform = "scale(0)";
+      $event.target.style.display = "none";
+      this.item = item.trim();
+      let obj = { cateName: item, id: item };
+      this.cateList.push(obj);
     },
   },
 };
@@ -68,9 +84,19 @@ export default {
     margin-bottom: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
+    animation: myfirst 0.3s;
+    transition: all 0.3s;
   }
 }
 .currentColor {
   background-color: #f0f0f0;
+}
+@keyframes myfirst {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 </style>
