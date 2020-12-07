@@ -5,7 +5,7 @@
         v-for="(item, index) in CateList"
         :key="item.id"
         @click="navClick(index)"
-        :class="{ currentcolor: index == currentIndex }"
+        :class="{ currentcolor: index == GetCid }"
       >
         <div>{{ item.cateName }}</div>
       </li>
@@ -22,8 +22,12 @@ export default {
   data() {
     return {
       CateList: [],
-      currentIndex: 0,
     };
+  },
+  computed: {
+    GetCid() {
+      return this.$store.state.cid;
+    },
   },
   async created() {
     let { data: res } = await this.$http.get("/cate");
@@ -31,7 +35,8 @@ export default {
   },
   methods: {
     navClick(index) {
-      this.currentIndex = index;
+      this.$store.commit("changeCid", index);
+      this.$Bus.$emit("cateClick", index);
     },
     ChangeCateClick() {
       this.$router.push("/channel");

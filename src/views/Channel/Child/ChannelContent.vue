@@ -2,7 +2,13 @@
   <div class="Content">
     <div class="delete">点击删除以下频道</div>
     <ul class="Content_main">
-      <li v-for="item in cateList" :key="item.id">{{ item.cateName }}</li>
+      <li
+        v-for="(item, index) in cateList"
+        :key="item.id"
+        :class="index == GetCid ? 'currentColor' : ''"
+      >
+        {{ item.cateName }}
+      </li>
     </ul>
     <div class="delete">点击添加以下频道</div>
     <ul class="Content_main">
@@ -21,6 +27,11 @@ export default {
     return {
       cateList: [],
     };
+  },
+  computed: {
+    GetCid() {
+      return this.$store.state.cid;
+    },
   },
   created() {
     this.getCateList();
@@ -58,5 +69,8 @@ export default {
     border: 1px solid #ccc;
     font-size: 16px;
   }
+}
+.currentColor {
+  background-color: #f0f0f0;
 }
 </style>

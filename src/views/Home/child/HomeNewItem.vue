@@ -22,6 +22,11 @@ export default {
   name: "HomeNewItem",
   created() {
     this.getNewsList();
+    this.$Bus.$on("cateClick", async (index) => {
+      let cid = index + 1;
+      let { data: res } = await this.$http.get(`/list?cid=${cid}`);
+      this.newsList = res.list;
+    });
   },
   data() {
     return {
@@ -30,8 +35,8 @@ export default {
   },
   methods: {
     async getNewsList() {
-      let { data: res } = await this.$http.get("/list");
-      this.newsList = res.result[0].list;
+      let { data: res } = await this.$http.get("/list?cid=1");
+      this.newsList = res.list;
       this.$Bus.$emit("over");
     },
     newclick(index) {
